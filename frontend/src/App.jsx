@@ -256,7 +256,7 @@ function ToolPage({ title, description, goHome }) {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/file", {
+      const response = await fetch("http://https://ai-hub-urgu.onrender.com/api/file", {
         method: "POST",
         body: formData,
       });
