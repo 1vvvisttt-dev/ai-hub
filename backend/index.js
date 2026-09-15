@@ -10,6 +10,12 @@ import { HfInference } from "@huggingface/inference";
 
 
 dotenv.config();
+console.log(
+  "OPENROUTER KEY:",
+  process.env.OPENROUTER_API_KEY
+    ? `найден, длина ${process.env.OPENROUTER_API_KEY.length}`
+    : "НЕ НАЙДЕН"
+);
 const hf = new HfInference(process.env.HF_TOKEN);
 const app = express();
 
@@ -284,5 +290,6 @@ server.on("error", (error) => {
   console.error("Ошибка запуска backend:");
   console.error(error);
 });
+
 
 process.stdin.resume();
