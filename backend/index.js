@@ -274,9 +274,10 @@ app.post("/api/image/huggingface", async (req, res) => {
   }
 });
 
-const server = app.listen(5000, () => {
-  console.log("🚀 Backend работает");
-  console.log("http://localhost:5000");
+const PORT = process.env.PORT || 5000;
+
+const server = app.listen(PORT, "0.0.0.0", () => {
+  console.log(`🚀 Backend работает на порту ${PORT}`);
 });
 
 server.on("error", (error) => {
